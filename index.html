@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    body {
+      height: 90vh;
+    }
+    img {
+      height: auto;
+      width: 150px;
+      display: block;
+    }
+
+    .dice {
+      display: flex;
+      gap: 10px;
+      text-align: center;
+      background-color: ;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="container" id="container">
+      <h1>Dice Game</h1>
+
+      <div class="dice">
+        <div>
+          <h3>Player 1</h3>
+          <img src="images/dice1.png" id="img1" />
+        </div>
+        <div>
+          <h3>Player 2</h3>
+          <img src="images/dice1.png" id="img2" />
+        </div>
+      </div>
+
+      <button type="button" id="play">Play</button>
+
+      <h1 id="result">Player 1 win!</h1>
+    </div>
+    <script>
+      document.getElementById("play").addEventListener("click",playing);
+      function playing(){
+        var player1= Math.floor(Math.random()*6)+1;
+        var player2= Math.floor(Math.random()*6)+1;
+        if(player1===1){
+          document.getElementById("img1").setAttribute("src","images/dice1.png");
+        }else if(player1===2){
+          document.getElementById("img1").setAttribute("src","images/dice2.png");
+        }else if(player1===3){
+          document.getElementById("img1").setAttribute("src","images/dice3.png");
+        
+        }else if(player1===4){
+          document.getElementById("img1").setAttribute("src","images/dice4.png");
+        
+        }else if(player1===5){
+          document.getElementById("img1").setAttribute("src","images/dice5.png");
+        }
+        else if(player1===6){
+          document.getElementById("img1").setAttribute("src","images/dice6.png");
+        }
+
+
+        if(player2===1){
+          document.getElementById("img2").setAttribute("src","images/dice1.png");
+        }else if(player2===2){
+          document.getElementById("img2").setAttribute("src","images/dice2.png");
+        }else if(player2===3){
+          document.getElementById("img2").setAttribute("src","images/dice3.png");
+        
+        }else if(player2===4){
+          document.getElementById("img2").setAttribute("src","images/dice4.png");
+        
+        }else if(player2===5){
+          document.getElementById("img2").setAttribute("src","images/dice5.png");
+        }
+        else if(player2===6){
+          document.getElementById("img2").setAttribute("src","images/dice6.png");
+        }
+        if(player1<player2){
+          document.getElementById("result").innerText="Player 2 is Winner"
+          document.getElementById("container").style.backgroundColor="Blue"
+        }else if(player1>player2){
+          document.getElementById("result").innerText="Player 1 is Winner"
+            document.getElementById("container").style.backgroundColor="Green"
+        }else{
+             document.getElementById("result").innerText="DRAW"
+              document.getElementById("container").style.backgroundColor="yellow"
+        }
+
+        
+
+
+      }
+
+
+    </script>
+  </body>
+</html>
